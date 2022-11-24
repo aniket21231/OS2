@@ -7,11 +7,10 @@
 #include <sys/stat.h>
 #include <pthread.h>
 #include <math.h>
-#define timespec j;
 #include <sched.h>
 int main(void){
     pid_t id_1,id_2,id_3;
-    struct j begin_1,end_1;
+    struct timespec begin_1,end_1;
     clock_gettime(CLOCK_REALTIME,&begin_1);
     int zero = 0;
     id_1=fork();
@@ -27,7 +26,7 @@ int main(void){
         clock_gettime(CLOCK_REALTIME,&end_1);
         double t1 = (((end_1.tv_sec - begin_1.tv_sec) * 1000000000) + (end_1.tv_nsec - begin_1.tv_nsec)) /1000000000.0;
         printf("Time for Process-1:%lf\n",t1);
-        struct j begin_2,end_2;
+        struct timespec begin_2,end_2;
         clock_gettime(CLOCK_REALTIME,&begin_2);
         int nzero=0;
         id_2 = fork();  
@@ -43,7 +42,7 @@ int main(void){
             clock_gettime(CLOCK_REALTIME,&end_2);
             double t2 = (((end_1.tv_sec - begin_1.tv_sec) * 1000000000) + (end_1.tv_nsec - begin_1.tv_nsec)) /1000000000.0;
             printf("Time for Process-2:%lf\n",t2);
-            struct j end_3,begin_3;
+            struct timespec end_3,begin_3;
             clock_gettime(CLOCK-REALTIME,&begin_3);
             int zero2=0;
             id_3=fork();
