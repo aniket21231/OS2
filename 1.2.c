@@ -8,6 +8,7 @@
 #include <pthread.h>
 #include <math.h>
 #define timespec j;
+#include <sched.h>
 int main(void){
     pid_t id_1,id_2,id_3;
     struct j begin_1,end_1;
