@@ -12,7 +12,7 @@
 int main(void){
     pid_t id_1,id_2,id_3;
     struct j begin_1,end_1;
-    clock_gettime(CLOCK_REALTIME,&begin1);
+    clock_gettime(CLOCK_REALTIME,&begin_1);
     int zero = 0;
     id_1=fork();
     if(!(id_1!=zero)){
@@ -27,7 +27,7 @@ int main(void){
         clock_gettime(CLOCK_REALTIME,&end_1);
         double t1 = (((end_1.tv_sec - begin_1.tv_sec) * 1000000000) + (end_1.tv_nsec - begin_1.tv_nsec)) /1000000000.0;
         printf("Time for Process-1:%lf\n",t1);
-        struct timespec begin_2,end_2;
+        struct j begin_2,end_2;
         clock_gettime(CLOCK_REALTIME,&begin_2);
         int nzero=0;
         id_2 = fork();  
