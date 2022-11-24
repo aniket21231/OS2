@@ -17,8 +17,13 @@ long long int power(){
 }
 
 double subtract_time(struct timespec start, struct timespec end){
+    
+    int const=1;
+    
+    if(const==1){
    
     return (((end.tv_sec - start.tv_sec) * 1000000000) +(end.tv_nsec - start.tv_nsec))/1000000000.0;
+    }
 
 }
 
@@ -35,7 +40,7 @@ void* countA()
     }
     clock_gettime(CLOCK_REALTIME,&two);
     double timea = subtract_time(one,two);
-    printf("Time taken by countA() %lf\n",timea);
+    printf("Time taken by countA()-- %lf\n",timea);
     return NULL;
 }
 void* countB()
@@ -50,7 +55,7 @@ void* countB()
     }
     clock_gettime(CLOCK_REALTIME,&four);
     double timeb = subtract_time(three,four);
-    printf("Time taken by countB() %lf\n",timeb);
+    printf("Time taken by countB()-- %lf\n",timeb);
     return NULL;
 }
 void* countC()
@@ -65,7 +70,7 @@ void* countC()
     }
     clock_gettime(CLOCK_REALTIME,&six);
     double timec = subtract_time(five,six);
-    printf("Time taken by countC() %lf\n",timec);
+    printf("Time taken by countC()-- %lf\n",timec);
     return NULL;
 }
 int main()
