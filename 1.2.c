@@ -43,7 +43,7 @@ int main(void){
             double t2 = (((end_1.tv_sec - begin_1.tv_sec) * 1000000000) + (end_1.tv_nsec - begin_1.tv_nsec)) /1000000000.0;
             printf("Time for Process-2:%lf\n",t2);
             struct timespec end_3,begin_3;
-            clock_gettime(CLOCK-REALTIME,&begin_3);
+            clock_gettime(CLOCK_REALTIME,&begin_3);
             int zero2=0;
             id_3=fork();
             if(!(id_3!=zero2)){
