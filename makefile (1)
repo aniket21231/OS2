@@ -1,0 +1,5 @@
+run:t
+	./t
+	rm t
+t:test2.c
+	gcc test2.c -o t

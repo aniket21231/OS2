@@ -1,0 +1,5 @@
+run:m
+	./m
+	rm m
+m:test_1_2.c
+	gcc test_1_2.c -o m
